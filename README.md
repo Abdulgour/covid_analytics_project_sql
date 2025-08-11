@@ -58,6 +58,26 @@ Queries (to be added soon) will include:
 
 ---
 
+## 📅 Project Progress
+
+### 1. Database Setup & Table Inspection
+- Created database: `covid_project`
+- Verified existence of `covid_deaths` and `covid_vaccination` tables using:
+  - `SHOW TABLES`
+  - `DESC`
+- Confirmed data loading via MySQL wizard.
+
+---
+
+### 2. Data Understanding & Cleaning
+- Sample data inspection (`SELECT ... LIMIT 10` for both tables).
+- Checked date ranges for both datasets.
+- Counted NULL values in critical columns (`total_cases`, `total_deaths`).
+- Implemented **safe division** for death rate calculations using:
+  ```sql
+  COALESCE(ROUND(total_deaths / NULLIF(total_cases, 0) * 100, 2), 0)
+
+
 ## 📜 License
 Educational use only. Dataset credit: [Our World in Data](https://ourworldindata.org/covid-deaths).
 
@@ -65,7 +85,7 @@ Educational use only. Dataset credit: [Our World in Data](https://ourworldindata
 
 ## 🤝 Connect
 📧 Email: padhanabdul@gmail.com
-💼 LinkedIn: [Mohd Abdullah](https://www.linkedin.com/in/mohd-abdullah-783073244/)  
+💼 LinkedIn: [Mohd Abdullah's Linkedin](https://www.linkedin.com/in/mohd-abdullah-783073244/)
 📂 GitHub: [Mohd Abdullah's GitHub](https://github.com/Abdulgour)  
 🏆 HackerRank: [Mohd Abdullah's HackerRank](https://www.hackerrank.com/profile/padhanabdul)  
 💡 LeetCode: [Mohd Abdullah's LeetCode](https://leetcode.com/u/abdulgour/)
