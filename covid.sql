@@ -74,3 +74,34 @@ FROM covid_deaths
 WHERE continent IS NOT NULL
 GROUP BY location
 ORDER BY death_percentage DESC;
+
+-- ===========================================
+-- CONTINENT ANALYSIS
+-- ===========================================
+
+-- Continent deaths
+
+SELECT 
+    continent,
+    MAX(total_deaths) AS total_deaths
+FROM covid_deaths
+WHERE continent IS NOT NULL
+GROUP BY continent
+ORDER BY total_deaths DESC;
+
+SELECT
+    continent,
+    SUM(new_deaths) AS total_death_count
+FROM covid_deaths
+WHERE continent IS NOT NULL
+GROUP BY continent
+ORDER BY total_death_count DESC;
+
+-- Continental comparison
+SELECT 
+    continent,
+    SUM(new_cases) AS total_cases,
+    SUM(new_deaths) AS total_deaths
+FROM covid_deaths
+WHERE continent IS NOT NULL
+GROUP BY continent;
